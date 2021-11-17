@@ -2,7 +2,7 @@
 
     java -javaagent:/path/to/agent/jar-loader-agent.jar -jar /path/to/your/app/app.jar
 
-2) After application started add method for loading jar:
+2)  Add method for loading jar:
 
    Class<?> clazz = Class.forName("com.github.aek123.JarLoader");\
    Method addJar = clazz.getMethod("addJar", Path.class);\
