@@ -7,6 +7,9 @@ import java.util.jar.JarFile;
 
 public class JarLoader {
 
+    private JarLoader() {
+    }
+
     private static Instrumentation instrumentation;
 
     public static void premain(String args, Instrumentation instrumentation) {
@@ -16,10 +19,6 @@ public class JarLoader {
     public static void addJar(Path jarPath) throws IOException {
         JarFile jarfile = new JarFile(jarPath.toFile());
         instrumentation.appendToSystemClassLoaderSearch(jarfile);
-    }
-
-    public static Class<?>[] classes() {
-        return instrumentation.getAllLoadedClasses();
     }
 
 }
