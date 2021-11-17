@@ -14,5 +14,5 @@
 
 4) You can access new classes via reflection like:
 
-   Class<?> classToLoad = Class.forName("org.example.SimpleClass");\
-   classToLoad.getMethod("hello").invoke(classToLoad.getConstructor().newInstance());
+   Class<?> clazz = Class.forName("org.example.SimpleClass");\
+   clazz.getMethod("hello").invoke(clazz.getConstructor().newInstance());
